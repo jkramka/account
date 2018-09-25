@@ -23,8 +23,8 @@ public class TestAccountLogic {
 	public void testAssignMonthlyFee() {
 		account.setChecking(100.00);
 		account.setSavings(100.00);
-		double monthlyFee = accLogic.assignMonthlyFee(account);
-		assertTrue(50.00 == monthlyFee);
+		accLogic.assignMonthlyFee(account);
+		assertEquals(50.00, account.getMonthlyFee(), 0.0);
 	}
 	
 	@Test

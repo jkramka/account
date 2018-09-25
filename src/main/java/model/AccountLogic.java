@@ -2,7 +2,7 @@ package model;
 
 public class AccountLogic {
 	
-	public double assignMonthlyFee(BankAccount account) {
+	public void assignMonthlyFee(BankAccount account) {
 		double monthlyFee = 0.0;
 		if (account.getSavings() > 0.0) {
 			monthlyFee = monthlyFee + 25.00;
@@ -10,7 +10,7 @@ public class AccountLogic {
 		if (account.getChecking() > 0.0) {
 			monthlyFee = monthlyFee + 25.00;
 		};
-		return monthlyFee;
+		account.setMonthlyFee(monthlyFee);
 	}
 	
 	public double assignToSavings(BankAccount account, double deposit) {
